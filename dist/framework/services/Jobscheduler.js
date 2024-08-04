@@ -41,10 +41,7 @@ Object.defineProperty(exports, '__esModule', { value: true })
 const path_1 = __importDefault(require('path'))
 const worker_threads_1 = require('worker_threads')
 const worker = new worker_threads_1.Worker(
-  path_1.default.resolve(__dirname, 'Worker.js'),
-  {
-    execArgv: ['-r', 'ts-node/register'],
-  }
+  path_1.default.resolve(__dirname, 'Worker.js')
 )
 class JobScheduler {
   constructor(agenda, userRepository) {
