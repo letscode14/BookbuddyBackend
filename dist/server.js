@@ -22,9 +22,7 @@ const http_1 = __importDefault(require("http"));
 const dotenv_1 = require("dotenv");
 (0, dotenv_1.config)();
 const startWorker = () => {
-    const worker = new worker_threads_1.Worker(path_1.default.resolve(__dirname, 'framework/services/Worker.ts'), {
-        execArgv: ['-r', 'ts-node/register'],
-    });
+    const worker = new worker_threads_1.Worker(path_1.default.resolve(__dirname, 'framework/services/Worker.js'));
     worker.on('message', (message) => {
         if (message.status === 'complete') {
             console.log('User loading complete');
