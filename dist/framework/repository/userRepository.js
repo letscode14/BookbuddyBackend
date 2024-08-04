@@ -643,7 +643,7 @@ class UserRepository {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { userId, query, pageNo, currentUser } = req.query;
-                const limit = 1;
+                const limit = 10;
                 const skip = (Number(pageNo) - 1) * limit;
                 const data = yield userModel_1.default.findById(currentUser, {
                     _id: 1,
@@ -2263,7 +2263,7 @@ class UserRepository {
                 return null;
             }
             try {
-                const limit = 1;
+                const limit = 10;
                 const skip = (pageNo - 1) * limit;
                 const pipeline = [
                     {
